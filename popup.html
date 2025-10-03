@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PomoPal</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="title">PomoPal</h1>
+      <div id="timer-display" class="timer">00:00</div>
+      <div id="phase" class="phase">Idle</div>
+      <div class="buttons">
+        <button id="start-btn" class="primary">Start</button>
+        <button id="pause-btn" class="secondary hidden">Pause</button>
+        <button id="resume-btn" class="secondary hidden">Resume</button>
+        <button id="reset-btn" class="secondary hidden">Reset</button>
+      </div>
+      <div id="stats" class="stats">
+        <div>
+          Completed Today: <span id="stats-today">0</span>
+        </div>
+        <div>
+          Completed This Week: <span id="stats-week">0</span>
+        </div>
+        <div>
+          Streak: <span id="stats-streak">0</span>
+        </div>
+      </div>
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+      <button id="share-btn" class="secondary" style="margin-top: 8px;">Share progress</button>
+      <a id="settings-link" href="#" class="settings-link">Settings</a>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

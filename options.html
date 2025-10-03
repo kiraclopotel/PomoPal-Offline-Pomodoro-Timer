@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Settings</title>
+    <link rel="stylesheet" href="popup.css" />
+    <style>
+      /* Additional styles specific to the options page */
+      body {
+        padding: 20px;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+      }
+      input[type="number"] {
+        width: 80px;
+      }
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .stats-summary {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+      .stats-summary span {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Settings</h1>
+    <form id="settings-form">
+      <label>
+        Work duration (minutes)
+        <input type="number" id="work-duration" min="1" max="180" required />
+      </label>
+      <label>
+        Short break duration (minutes)
+        <input type="number" id="short-break-duration" min="1" max="60" required />
+      </label>
+      <label>
+        Long break duration (minutes)
+        <input type="number" id="long-break-duration" min="1" max="120" required />
+      </label>
+      <label>
+        Long break interval (number of pomodoros)
+        <input type="number" id="long-break-interval" min="1" max="10" required />
+      </label>
+
+      <label>
+        Theme
+        <select id="theme-select">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+      <div class="btn-row">
+        <button type="submit" class="primary">Save</button>
+        <button type="button" id="reset-defaults" class="secondary">Reset defaults</button>
+      </div>
+    </form>
+
+    <h2>Statistics</h2>
+    <div class="stats-summary">
+      <div>
+        Completed today: <span id="stats-today">0</span>
+      </div>
+      <div>
+        Completed this week: <span id="stats-week">0</span>
+      </div>
+    </div>
+    <button id="clear-stats" class="secondary" style="margin-top: 10px">Clear statistics</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>
